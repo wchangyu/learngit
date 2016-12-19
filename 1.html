@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		table {
+			width:800px;
+			height:200px;
+			border-collapse:collapse;
+
+		}
+		table .blues{
+			text-align: right;
+			background-color: #e3f1fd;
+			color:#2e6e9f;
+		}
+
+	</style>
+</head>
+<body>
+
+	<button onclick='CreateTable()'>弹出选框</button>
+	<div id="main"></div>
+
+<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+
+<script type="text/javascript">
+	
+     function CreateTable(){ 
+	     var table=$("<table border=\"1\">");
+	     table.appendTo($("#main"));
+	     var header = $("<caption>我的标题</caption>");
+	     header.appendTo(table);
+	     $.getJSON('assetsbrow.json',function(data){ 
+	     	console.log(data); 
+	     	var bodyer = $(
+	     			"<tr>" +
+						"<td class='blues'>资产类型：</td>" +
+						"<td>"+data.data[0].assetType+"</td>" +
+						"<td class='blues'>资产编号：</td>" +
+						"<td colspan='3'>"+data.data[0].assetNumber+"</td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>资产名称：</td>" +
+						"<td>"+data.data[0].assetName+"</td>" +
+						"<td class='blues'>拼音简码：</td>" +
+						"<td></td><td class='blues'>状态：</td>" +
+						"<td>"+data.data[0].state+"</td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>所属区域：</td>" +
+						"<td >"+data.data[0].installationArea+"</td>" +
+						"<td class='blues'>所属系统：</td>" +
+						"<td>"+data.data[0].itsSystem+"</td>" +
+						"<td class='blues'>所属部门：</td>" +
+						"<td>"+data.data[0].userDepartment+"</td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>品牌：</td>" +
+						"<td >"+data.data[0].brand+"</td>" +
+						"<td class='blues'>规格型号：</td>" +
+						"<td>"+data.data[0].specifications+"</td>" +
+						" <td class='blues'>供应商：</td>" +
+						"<td></td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>生产商：</td>" +
+						"<td></td>" +
+						"<td class='blues' class='blues'>使用年限：</td>" +
+						"<td>"+data.data[0].durableYears+"</td>" +
+						"<td class='blues'>保修期：</td>" +
+						"<td>"+data.data[0].warrantyPeriod+"</td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>购置日期：</td>" +
+						"<td>"+data.data[0].installationDate+"</td>" +
+						"<td class='blues'>安装日期：</td>" +
+						"<td>"+data.data[0].purchaseDate+"</td>" +
+						"<td class='blues'>安装位置：</td>" +
+						"<td>"+data.data[0].option+"</td>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>设备描述：</td>" +
+						"<td colspan='7'>" +
+					"</tr>" +
+					"<tr>" +
+						"<td class='blues'>技术资料：</td>" +
+						"<td colspan='7'>" +
+					"</tr>")
+	     	bodyer.appendTo(table);
+			
+		 })
+     }
+    
+
+	
+	
+
+</script>
+</body>
+</html>
