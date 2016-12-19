@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑'
+		}
+		a{
+			text-decoration: none;
+		}
+		.tooltip{
+			width:310px;
+			height: 210px;
+			border: 1px solid #9edcd5;
+			margin: 200px auto;
+			border-radius: 5px;
+		}
+		.tooltip .toolTitle{
+			width:302px;
+			height:39px;
+			margin-left:3px;
+			border: 1px solid #4297d7;
+		    border-radius: 5px;
+		    background: #5c9ccc;
+		    line-height: 39px;
+		    margin-bottom:5px;
+
+		}
+		.tooltip h3{
+			margin-left: 10px;
+			width:290px;
+			color:white;
+			font-size: 18px;
+		}
+		.tooltip h3 span{
+			display: inline-block;
+			width:20px;
+			color:#e2dddd;
+			float:right;
+			font-size: 16px;
+			cursor: pointer;
+			transform:scaleY(.8);
+		}
+		.tooltip .toolWords{
+			margin-left: 2px;
+			height:100px;
+			width:290px;
+			border-bottom: 1px solid #9edcd5;
+			padding-left:14px;
+			font-size:12px;
+			margin-bottom: 10px;
+		}
+		.tooltip .btn1{
+			 margin-left: 230px;
+			 width:48px;
+			height: 25px;
+			font-weight: bold;
+    		color: #2e6e9e;
+    		margin-bottom: 10px;
+    		background:#e7f1f0;
+    		outline: none;
+    		border:none;
+		}
+		.tooltip .btn1 a{
+			color:#2e6e9e;
+			width:100%;
+			height:100%;
+			display: block;
+			border:1px solid #9edcd5;
+    		border-radius: 15%;
+    		line-height: 22px;
+    		font-size: 16px;
+		}
+		.tooltip .btn1 a:hover{
+			border:1px solid #97d8ed;
+			background:#d9e1e4;
+		}
+	</style>
+</head>
+<body>
+	<div class="tooltip">
+		<div style="height:3px"></div>
+		<div class="toolTitle">
+			<h3>提示<span class='closeTooltip'><b>X</b></span></h3>
+		</div>
+		<div class="toolWords">
+			库中不存在知识
+		</div>
+		<button class="btn1"><a href="javascript:;">确定</a></button>
+	</div>
+	<script type="text/javascript" src="jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		$('.closeTooltip b').on('click',function(){
+			$('.tooltip').css({
+				'display':'none'
+			})
+		})
+	</script>
+</body>
+</html>
